@@ -22,5 +22,4 @@ app.use('/api/memberships', membershipRoutes);
 
 
 module.exports = app; // ✅ Export app instead of using app.listen()
-app.listen()
 module.exports.handler = serverless(app);
