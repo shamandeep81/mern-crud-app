@@ -21,5 +21,6 @@ app.use('/api/customers', customerRoutes);
 app.use('/api/memberships', membershipRoutes);
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app; // ✅ Export app instead of using app.listen()
+app.listen()
+module.exports.handler = serverless(app);
