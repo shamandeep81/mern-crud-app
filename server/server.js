@@ -4,6 +4,7 @@ const connectDB = require('./config/db');
 const customerRoutes = require('./routes/customerRoutes');
 const membershipRoutes = require('./routes/membershipRoutes');
 const dotenv = require('dotenv');
+const serverless = require('serverless-http');
 
 dotenv.config();
 
@@ -14,7 +15,7 @@ connectDB();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: 'https://mern-crud-app-95wx.vercel.app' }));
 
 
 app.use('/api/customers', customerRoutes);
